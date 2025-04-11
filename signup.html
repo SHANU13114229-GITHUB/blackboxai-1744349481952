@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your Shanu'sBox account - Showcase your certificates, achievements, and skills">
+    <meta name="keywords" content="portfolio, achievements, certificates, skills, signup, register">
+    <title>Sign Up - Shanu'sBox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto">
+            <!-- Logo and Title -->
+            <div class="text-center mb-8">
+                <a href="index.html" class="inline-block">
+                    <h1 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                        Shanu'sBox
+                    </h1>
+                </a>
+                <p class="text-gray-600 mt-2">Create your account to get started</p>
+            </div>
+
+            <!-- Signup Card -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <!-- Signup Form -->
+                <form id="signupForm" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required 
+                                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                placeholder="First name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required 
+                                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                placeholder="Last name">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="email">Email Address</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required 
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                            placeholder="Enter your email">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="phone">Phone Number</label>
+                        <div class="flex">
+                            <select class="px-3 py-2 rounded-l-lg border border-r-0 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option>+91</option>
+                                <option>+1</option>
+                                <option>+44</option>
+                            </select>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel" required 
+                                class="flex-1 px-4 py-2 rounded-r-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                placeholder="Enter phone number">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="password">Password</label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" autocomplete="new-password" required 
+                                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                placeholder="Create password">
+                            <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" onclick="togglePassword(this)">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="mt-1">
+                            <div class="flex items-center text-sm space-x-1">
+                                <i id="lengthCheck" class="fas fa-circle text-xs text-gray-300"></i>
+                                <span class="text-gray-500">At least 8 characters</span>
+                            </div>
+                            <div class="flex items-center text-sm space-x-1">
+                                <i id="complexityCheck" class="fas fa-circle text-xs text-gray-300"></i>
+                                <span class="text-gray-500">Contains numbers and symbols</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="confirmPassword">Confirm Password</label>
+                        <div class="relative">
+                            <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" required 
+                                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                placeholder="Confirm password">
+                            <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" onclick="togglePassword(this)">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <input type="checkbox" id="terms" name="terms" required class="mt-1 form-checkbox text-blue-600">
+                        <label for="terms" class="ml-2 text-sm text-gray-600">
+                            I agree to the 
+                            <a href="#" class="text-blue-600 hover:text-blue-800">Terms of Service</a> 
+                            and 
+                            <a href="#" class="text-blue-600 hover:text-blue-800">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        Create Account
+                    </button>
+                </form>
+
+                <!-- Social Signup -->
+                <div class="mt-6">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or sign up with</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid grid-cols-3 gap-3">
+                        <button class="flex justify-center items-center py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                            <i class="fab fa-google text-red-500"></i>
+                        </button>
+                        <button class="flex justify-center items-center py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                            <i class="fab fa-facebook text-blue-500"></i>
+                        </button>
+                        <button class="flex justify-center items-center py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Login Link -->
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600">
+                        Already have an account? 
+                        <a href="login.html" class="text-blue-600 hover:text-blue-800 font-medium">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword(button) {
+            const input = button.parentElement.querySelector('input');
+            const icon = button.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // Password validation
+        const password = document.getElementById('password');
+        const lengthCheck = document.getElementById('lengthCheck');
+        const complexityCheck = document.getElementById('complexityCheck');
+
+        password.addEventListener('input', function() {
+            // Check length
+            if (this.value.length >= 8) {
+                lengthCheck.classList.remove('text-gray-300');
+                lengthCheck.classList.add('text-green-500');
+            } else {
+                lengthCheck.classList.remove('text-green-500');
+                lengthCheck.classList.add('text-gray-300');
+            }
+
+            // Check complexity
+            const hasNumbersAndSymbols = /[0-9]/.test(this.value) && /[!@#$%^&*]/.test(this.value);
+            if (hasNumbersAndSymbols) {
+                complexityCheck.classList.remove('text-gray-300');
+                complexityCheck.classList.add('text-green-500');
+            } else {
+                complexityCheck.classList.remove('text-green-500');
+                complexityCheck.classList.add('text-gray-300');
+            }
+        });
+
+        // Form validation
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            
+            if (password.value !== confirmPassword.value) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            if (password.value.length < 8) {
+                alert('Password must be at least 8 characters long!');
+                return;
+            }
+
+            if (!/[0-9]/.test(password.value) || !/[!@#$%^&*]/.test(password.value)) {
+                alert('Password must contain numbers and symbols!');
+                return;
+            }
+            
+            // Add more validation as needed
+            console.log('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>
