@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to Shanu'sBox - Manage your certificates, achievements, and skills">
+    <meta name="keywords" content="portfolio, achievements, certificates, skills, login">
+    <title>Login - Shanu'sBox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto">
+            <!-- Logo and Title -->
+            <div class="text-center mb-8">
+                <a href="index.html" class="inline-block">
+                    <h1 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                        Shanu'sBox
+                    </h1>
+                </a>
+                <p class="text-gray-600 mt-2">Welcome back! Please login to continue.</p>
+            </div>
+
+            <!-- Login Card -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <!-- Login Tabs -->
+                <div class="flex mb-6">
+                    <button id="emailTab" onclick="switchTab('email')" class="flex-1 py-2 text-center border-b-2 border-blue-600 text-blue-600 font-medium">
+                        Email Login
+                    </button>
+                    <button id="phoneTab" onclick="switchTab('phone')" class="flex-1 py-2 text-center border-b-2 border-gray-200 text-gray-500 font-medium">
+                        Phone Login
+                    </button>
+                </div>
+
+                <!-- Email Login Form -->
+                <form id="emailForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="email">Email Address</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required 
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                            placeholder="Enter your email">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="password">Password</label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" autocomplete="current-password" required 
+                                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                placeholder="Enter your password">
+                            <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" onclick="togglePassword(this)">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox text-blue-600">
+                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                        </label>
+                        <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        Login with Email
+                    </button>
+                </form>
+
+                <!-- Phone Login Form (Hidden by default) -->
+                <form id="phoneForm" class="space-y-4 hidden">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="phone">Phone Number</label>
+                        <div class="flex">
+                            <select class="px-3 py-2 rounded-l-lg border border-r-0 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option>+91</option>
+                                <option>+1</option>
+                                <option>+44</option>
+                            </select>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel" required 
+                                class="flex-1 px-4 py-2 rounded-r-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                placeholder="Enter phone number">
+                        </div>
+                    </div>
+                    <div id="otpSection" class="hidden">
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Enter OTP</label>
+                        <div class="flex gap-2">
+                            <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-lg" />
+                            <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-lg" />
+                            <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-lg" />
+                            <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-lg" />
+                            <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-lg" />
+                            <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-lg" />
+                        </div>
+                    </div>
+                    <button type="submit" id="phoneSubmitBtn" class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        Send OTP
+                    </button>
+                </form>
+
+                <!-- Social Login -->
+                <div class="mt-6">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid grid-cols-3 gap-3">
+                        <button class="flex justify-center items-center py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                            <i class="fab fa-google text-red-500"></i>
+                        </button>
+                        <button class="flex justify-center items-center py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                            <i class="fab fa-facebook text-blue-500"></i>
+                        </button>
+                        <button class="flex justify-center items-center py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sign Up Link -->
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600">
+                        Don't have an account? 
+                        <a href="signup.html" class="text-blue-600 hover:text-blue-800 font-medium">Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const emailTab = document.getElementById('emailTab');
+            const phoneTab = document.getElementById('phoneTab');
+            const emailForm = document.getElementById('emailForm');
+            const phoneForm = document.getElementById('phoneForm');
+
+            if (tab === 'email') {
+                emailTab.classList.add('border-blue-600', 'text-blue-600');
+                emailTab.classList.remove('border-gray-200', 'text-gray-500');
+                phoneTab.classList.add('border-gray-200', 'text-gray-500');
+                phoneTab.classList.remove('border-blue-600', 'text-blue-600');
+                emailForm.classList.remove('hidden');
+                phoneForm.classList.add('hidden');
+            } else {
+                phoneTab.classList.add('border-blue-600', 'text-blue-600');
+                phoneTab.classList.remove('border-gray-200', 'text-gray-500');
+                emailTab.classList.add('border-gray-200', 'text-gray-500');
+                emailTab.classList.remove('border-blue-600', 'text-blue-600');
+                phoneForm.classList.remove('hidden');
+                emailForm.classList.add('hidden');
+            }
+        }
+
+        function togglePassword(button) {
+            const input = button.parentElement.querySelector('input');
+            const icon = button.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // Handle phone form submission
+        document.getElementById('phoneForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const otpSection = document.getElementById('otpSection');
+            const submitBtn = document.getElementById('phoneSubmitBtn');
+            
+            if (otpSection.classList.contains('hidden')) {
+                otpSection.classList.remove('hidden');
+                submitBtn.textContent = 'Verify OTP';
+            } else {
+                // Handle OTP verification
+                console.log('Verifying OTP...');
+            }
+        });
+
+        // Auto-focus next OTP input
+        const otpInputs = document.querySelectorAll('#otpSection input');
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', function() {
+                if (this.value && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+            });
+            
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && !this.value && index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
