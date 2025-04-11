@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shanu'sBox - A personal portfolio showcasing certificates, achievements, and professional skills">
+    <meta name="keywords" content="portfolio, achievements, certificates, skills, professional profile">
+    <meta name="author" content="Shanu">
+    <title>Shanu'sBox - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 backdrop-blur-md bg-white/70 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                        Shanu'sBox
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#certificates" class="text-gray-700 hover:text-blue-600 transition-colors">Certificates</a>
+                    <a href="#achievements" class="text-gray-700 hover:text-blue-600 transition-colors">Achievements</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition-colors">Skills</a>
+                    <a href="login.html" class="px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors">Login</a>
+                </div>
+                <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-4 space-y-4">
+                <a href="#" class="block text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                <a href="#certificates" class="block text-gray-700 hover:text-blue-600 transition-colors">Certificates</a>
+                <a href="#achievements" class="block text-gray-700 hover:text-blue-600 transition-colors">Achievements</a>
+                <a href="#skills" class="block text-gray-700 hover:text-blue-600 transition-colors">Skills</a>
+                <a href="login.html" class="block px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors text-center">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 z-0"></div>
+        <div class="container mx-auto px-4 z-10">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 animate-float">
+                    Welcome to Shanu'sBox
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">Showcasing my journey through certificates, achievements, and skills</p>
+                <a href="#explore" class="px-8 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors inline-flex items-center space-x-2 group">
+                    <span>Explore Now</span>
+                    <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Decorative Elements -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+            <svg class="relative block w-full h-48" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="white"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Certificates Preview Section -->
+    <section id="certificates" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Certificates</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Certificate Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100 group">
+                    <div class="h-48 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" alt="Web Development Certificate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Web Development</h3>
+                    <p class="text-gray-600 mb-4">Advanced certification in modern web development technologies</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">2023</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 group-hover:translate-x-1 transition-transform inline-flex items-center">
+                            View Details
+                            <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100 group">
+                    <div class="h-48 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg" alt="Data Science Certificate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Data Science</h3>
+                    <p class="text-gray-600 mb-4">Professional certification in data analysis and machine learning</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">2023</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 group-hover:translate-x-1 transition-transform inline-flex items-center">
+                            View Details
+                            <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100 group">
+                    <div class="h-48 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg" alt="Cloud Computing Certificate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Cloud Computing</h3>
+                    <p class="text-gray-600 mb-4">Expert certification in cloud architecture and deployment</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">2023</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 group-hover:translate-x-1 transition-transform inline-flex items-center">
+                            View Details
+                            <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Preview Section -->
+    <section id="achievements" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Achievement Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100 group">
+                    <div class="flex items-start">
+                        <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                            <i class="fas fa-trophy text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-semibold mb-2">First Place - Hackathon 2023</h3>
+                            <p class="text-gray-600 mb-4">Won first place in the national coding competition with an innovative solution for sustainable energy management.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">December 2023</span>
+                                <a href="#" class="text-blue-600 hover:text-blue-700 group-hover:translate-x-1 transition-transform inline-flex items-center">
+                                    Learn More
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100 group">
+                    <div class="flex items-start">
+                        <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                            <i class="fas fa-medal text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-xl font-semibold mb-2">Best Innovation Award</h3>
+                            <p class="text-gray-600 mb-4">Received recognition for developing an AI-powered solution that revolutionizes healthcare data management.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">November 2023</span>
+                                <a href="#" class="text-blue-600 hover:text-blue-700 group-hover:translate-x-1 transition-transform inline-flex items-center">
+                                    Learn More
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Preview Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100 text-center group">
+                    <i class="fab fa-html5 text-4xl text-orange-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-semibold">HTML5</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                        <div class="bg-orange-500 h-2.5 rounded-full w-[90%]"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100 text-center group">
+                    <i class="fab fa-css3-alt text-4xl text-blue-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-semibold">CSS3</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                        <div class="bg-blue-500 h-2.5 rounded-full w-[85%]"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100 text-center group">
+                    <i class="fab fa-js text-4xl text-yellow-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-semibold">JavaScript</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                        <div class="bg-yellow-500 h-2.5 rounded-full w-[80%]"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100 text-center group">
+                    <i class="fab fa-react text-4xl text-blue-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-lg font-semibold">React</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                        <div class="bg-blue-400 h-2.5 rounded-full w-[75%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Shanu'sBox</h3>
+                    <p class="text-gray-400">Showcasing excellence through achievements and skills.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#certificates" class="text-gray-400 hover:text-white transition-colors">Certificates</a></li>
+                        <li><a href="#achievements" class="text-gray-400 hover:text-white transition-colors">Achievements</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Shanu'sBox. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
